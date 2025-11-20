@@ -1,10 +1,14 @@
 package dominio;
 
+import java.time.LocalDate;
+
 public class Feature extends Tarea {
 	
 	
+	
+
 	public Feature(String idProyecto, String id, String descripcion, String prioridad, String estado,
-			String responsable) {
+			String responsable, LocalDate fecha) {
 		super(idProyecto, id, descripcion, prioridad, estado, responsable);
 		// TODO Auto-generated constructor stub
 	}

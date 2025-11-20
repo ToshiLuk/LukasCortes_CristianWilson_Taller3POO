@@ -1,10 +1,12 @@
 package dominio;
 
+import java.time.LocalDate;
+
 public class Bug extends Tarea {
 	
 	
 
-    public Bug(String idProyecto, String id, String descripcion, String prioridad, String estado, String responsable) {
+    public Bug(String idProyecto, String id, String descripcion, String prioridad, String estado, String responsable, LocalDate fecha) {
 		super(idProyecto, id, descripcion, prioridad, estado, responsable);
 		// TODO Auto-generated constructor stub
 	}
