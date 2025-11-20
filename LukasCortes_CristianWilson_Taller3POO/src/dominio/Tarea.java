@@ -1,16 +1,20 @@
 package dominio;
 
 public abstract class Tarea {
-	private String id;
-	private String descripcion;
-	private String estado;
-	private String responsable;
-	private String complejidad;
-	private String fecha;
+	protected String idProyecto;
+	protected String id;
+	protected String descripcion;
+	protected String prioridad;
+	protected String estado;
+	protected String responsable;
+	protected String complejidad;
+	protected String fecha;
 	
-	public Tarea(String id, String descripcion, String estado, String responsable, String complejidad, String fecha) {
-        this.id = id;
+	public Tarea(String idProyecto, String id, String descripcion, String prioridad, String estado, String responsable) {
+		this.idProyecto = idProyecto;
+		this.id = id;
         this.descripcion = descripcion;
+        this.prioridad = prioridad;
         this.estado = estado;
         this.responsable = responsable;
         this.complejidad = complejidad;
@@ -18,5 +22,28 @@ public abstract class Tarea {
     }
 	
 	public abstract void accept(IVisitor visitor);
-	
+    
+    public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getComplejidad() {
+		return complejidad;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	@Override
+    public String toString() { return id + ": " + descripcion; }
 }
+
