@@ -2,18 +2,24 @@ package dominio;
 
 public abstract class Usuario {
 	
-	protected String username;
-    protected String password;
+	protected String usuario;
+    protected String contraseña;
     protected String rol;
 
-    public Usuario(String username, String password, String rol) {
-        this.username = username;
-        this.password = password;
+    public Usuario(String usuario, String contraseña, String rol) {
+        this.usuario = usuario;
+        this.contraseña = contraseña;
         this.rol = rol;
     }
 
-    public String getUsername() { return username; }
-    public String getPassword() { return password; }
-    public String getRol() { return rol; }
+    public String getUsername() { 
+    		return usuario; 
+    	}
+    public String getPassword() { 
+    		return contraseña; 
+    	}
+    public String getRol() { 
+    		return rol; 
+    	}
     
 }

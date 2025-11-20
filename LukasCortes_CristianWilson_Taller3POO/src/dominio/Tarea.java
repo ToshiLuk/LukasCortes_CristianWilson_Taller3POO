@@ -42,8 +42,18 @@ public abstract class Tarea {
 	public String getFecha() {
 		return fecha;
 	}
+	
+	public String getIdProyecto() {
+		return idProyecto;
+	}
+
+	public String getResponsable() {
+		return responsable;
+	}
 
 	@Override
-    public String toString() { return id + ": " + descripcion; }
+    public String toString() { 
+		return id + " | " + descripcion + " | " + estado + " | " + complejidad; 
+	}
 }
 

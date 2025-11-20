@@ -7,7 +7,7 @@ public class Proyecto {
 	
 	private String id;
     private String nombre;
-    private String responsable; // Username del admin responsable
+    private String responsable; 
     private List<Tarea> tareas;
 
     public Proyecto(String id, String nombre, String responsable) {
@@ -21,8 +21,18 @@ public class Proyecto {
         this.tareas.add(tarea);
     }
 
-    public String getId() { return id; }
-    public String getNombre() { return nombre; }
-    public List<Tarea> getTareas() { return tareas; }
+    public String getId() { 
+    		return id; 
+    	}
+    public String getNombre() { 
+    		return nombre; 
+    	}
+    public List<Tarea> getTareas() { 
+    		return tareas; 
+    	}
+	public String getResponsable() {
+		return responsable;
+	}
+    
 
 }
