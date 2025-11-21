@@ -6,7 +6,12 @@ public class Bug extends Tarea {
 	
 	
 
-    public Bug(String idProyecto, String id, String descripcion, String prioridad, String complejidad,  String estado, String responsable, LocalDate fecha) {
+    
+
+	
+
+	public Bug(String idProyecto, String id, String descripcion, String estado, String responsable, String complejidad,
+			LocalDate fecha) {
 		super(idProyecto, id, descripcion, estado, responsable, complejidad, fecha);
 		// TODO Auto-generated constructor stub
 	}

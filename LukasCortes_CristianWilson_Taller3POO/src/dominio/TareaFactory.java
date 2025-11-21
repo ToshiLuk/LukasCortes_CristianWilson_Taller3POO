@@ -1,22 +1,17 @@
 package dominio;
-
 import java.time.LocalDate;
 
 public class TareaFactory {
-    public static Tarea crearTarea(String tipo, String idProyecto, String id, 
-                                   String desc, String estado, String resp, 
-                                   String comp, LocalDate fecha) {
-        
-        
+    public static Tarea crearTarea(String tipo, String idProj, String id, String desc, String est, String resp, String comp, LocalDate fecha) {
         switch (tipo.trim().toLowerCase()) {
             case "bug":
-                return new Bug(idProyecto, id, desc, estado, resp, comp, comp, fecha);
+                return new Bug(idProj, id, desc, est, resp, comp, fecha);
             case "feature":
-                return new Feature(idProyecto, id, desc, estado, resp, comp, fecha);
+                return new Feature(idProj, id, desc, est, resp, comp, fecha);
             case "documentacion":
-                return new Documentacion(idProyecto, id, desc, estado, resp, comp, fecha);
+                return new Documentacion(idProj, id, desc, est, resp, comp, fecha);
             default:
-                throw new IllegalArgumentException("Tipo de tarea desconocido: " + tipo);
+                throw new IllegalArgumentException("Tipo desconocido: " + tipo);
         }
     }
 }
