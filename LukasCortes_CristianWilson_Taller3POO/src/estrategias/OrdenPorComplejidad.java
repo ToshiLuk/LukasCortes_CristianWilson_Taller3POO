@@ -16,7 +16,6 @@ public class OrdenPorComplejidad implements IEstrategiaOrdenamiento {
     private int getPeso(String complejidad) {
         if (complejidad == null) return 99;
         
-        // Normalizamos a minúsculas por si acaso
         switch (complejidad.trim().toLowerCase()) {
             case "alta": return 1;
             case "media": return 2;

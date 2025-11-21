@@ -89,4 +89,51 @@ public class Main {
             }
         }
     }
+    
+ // --- MENÚ COLABORADOR ---
+    private static void menuColaborador(String miUser) {
+        IVisitor visitor = new AnalisisVisitor();
+       
+        while (true) {
+            System.out.println("\n--- MENÚ COLABORADOR ---");
+            System.out.println("1. Ver Mis Tareas");
+            System.out.println("2. Analizar Mis Tareas (Visitor)");
+            System.out.println("3. Salir");
+            System.out.print("Opción: ");
+
+            try {
+                int op = Integer.parseInt(sc.nextLine());
+                switch (op) {
+                    case 1: // Ver mis tareas
+                        boolean tieneTareas = false;
+                        for (Proyecto p : sistema.getProyectos()) {
+                            for (Tarea t : p.getTareas()) {
+                                if (t.getResponsable().equals(miUser)) {
+                                    System.out.println(p.getId() + " | " + t);
+                                    tieneTareas = true;
+                                }
+                            }
+                        }
+                        if (!tieneTareas) System.out.println("No tienes tareas asignadas.");
+                        break;
+                       
+                    case 2: // Aplicar Visitor
+                        for (Proyecto p : sistema.getProyectos()) {
+                            for (Tarea t : p.getTareas()) {
+                                if (t.getResponsable().equals(miUser)) {
+                                    System.out.print("Analizando tarea " + t.getId() + ": ");
+                                    t.accept(visitor); 
+                                }
+                            }
+                        }
+                        break;
+                       
+                    case 3: return;
+                    default: System.out.println("Opción no válida");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor ingrese un número.");
+            }
+        }
+    }
 }
