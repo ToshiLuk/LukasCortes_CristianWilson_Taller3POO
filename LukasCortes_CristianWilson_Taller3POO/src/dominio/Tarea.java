@@ -1,5 +1,7 @@
 package dominio;
 
+import java.time.LocalDate;
+
 public abstract class Tarea {
 	protected String idProyecto;
 	protected String id;
@@ -8,9 +10,9 @@ public abstract class Tarea {
 	protected String estado;
 	protected String responsable;
 	protected String complejidad;
-	protected String fecha;
+	protected LocalDate fecha;
 	
-	public Tarea(String idProyecto, String id, String descripcion, String prioridad, String estado, String responsable) {
+	public Tarea(String idProyecto, String id, String descripcion, String prioridad, String estado, String responsable, LocalDate fecha) {
 		this.idProyecto = idProyecto;
 		this.id = id;
         this.descripcion = descripcion;
@@ -20,6 +22,7 @@ public abstract class Tarea {
         this.complejidad = complejidad;
         this.fecha = fecha;
     }
+	
 	
 	public abstract void accept(IVisitor visitor);
     
@@ -39,7 +42,7 @@ public abstract class Tarea {
 		return complejidad;
 	}
 
-	public String getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 	

@@ -7,10 +7,10 @@ public class TareaFactory {
                                    String desc, String estado, String resp, 
                                    String comp, LocalDate fecha) {
         
-        // Normalizamos a minúsculas para evitar errores (Bug vs bug)
+        
         switch (tipo.trim().toLowerCase()) {
             case "bug":
-                return new Bug(idProyecto, id, desc, estado, resp, comp, fecha);
+                return new Bug(idProyecto, id, desc, estado, resp, comp, comp, fecha);
             case "feature":
                 return new Feature(idProyecto, id, desc, estado, resp, comp, fecha);
             case "documentacion":

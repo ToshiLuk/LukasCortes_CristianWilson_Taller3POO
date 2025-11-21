@@ -16,6 +16,7 @@ public class Proyecto {
         this.responsable = responsable;
         this.tareas = new ArrayList<>();
     }
+    
 
     public void agregarTarea(Tarea tarea) {
         this.tareas.add(tarea);
