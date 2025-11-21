@@ -3,6 +3,8 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+import estrategias.IEstrategiaOrdenamiento;
+
 public class Proyecto {
 	
 	private String id;
@@ -35,5 +37,8 @@ public class Proyecto {
 		return responsable;
 	}
     
+	public void ordenarTareas(IEstrategiaOrdenamiento estrategia) {
+	    estrategia.ordenar(this.tareas);
+	}
 
 }
