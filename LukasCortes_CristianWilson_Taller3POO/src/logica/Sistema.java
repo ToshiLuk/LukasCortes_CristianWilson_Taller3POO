@@ -73,9 +73,9 @@ public class Sistema {
         } catch (IOException e) { System.out.println("Error tareas: " + e.getMessage()); }
     }
 
-    public Usuario login(String user, String pass) {
+    public Usuario login(String usuario, String contraseña) {
         for (Usuario u : usuarios) {
-            if (u.getUsername().equals(user) && u.getPassword().equals(pass)) return u;
+            if (u.getUsername().equals(usuario) && u.getPassword().equals(contraseña)) return u;
         }
         return null;
     }
